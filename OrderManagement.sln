@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement", "OrderManagement\OrderManagement.csproj", "{60FF6657-DF5C-4704-AB32-0F6945A6A5F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A6BAE59E-D1C7-4763-84EB-A42E6224A72A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DE3F8DF8-6EE3-4D16-ABDA-6D461B0A6223}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3276CA18-1B23-4E9F-8231-E3505562C95E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{7E490AB9-2683-4DBC-8F80-A99B092BA7FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{B0D82070-716C-43EA-9F38-44AB4C8463DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement.Contracts", "OrderManagement.Contracts\OrderManagement.Contracts.csproj", "{63044CF2-338E-40A2-849E-882758366B27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement.Infrastructure", "OrderManagement.Infrastructure\OrderManagement.Infrastructure.csproj", "{2829CC9C-3E88-4B4E-8BBA-CD38E4D450A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement.Core", "OrderManagement.Core\OrderManagement.Core.csproj", "{469F7AD1-801E-45DA-8AEC-D3AFDA107BF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60FF6657-DF5C-4704-AB32-0F6945A6A5F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60FF6657-DF5C-4704-AB32-0F6945A6A5F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60FF6657-DF5C-4704-AB32-0F6945A6A5F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60FF6657-DF5C-4704-AB32-0F6945A6A5F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63044CF2-338E-40A2-849E-882758366B27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63044CF2-338E-40A2-849E-882758366B27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63044CF2-338E-40A2-849E-882758366B27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63044CF2-338E-40A2-849E-882758366B27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2829CC9C-3E88-4B4E-8BBA-CD38E4D450A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2829CC9C-3E88-4B4E-8BBA-CD38E4D450A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2829CC9C-3E88-4B4E-8BBA-CD38E4D450A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2829CC9C-3E88-4B4E-8BBA-CD38E4D450A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{469F7AD1-801E-45DA-8AEC-D3AFDA107BF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{469F7AD1-801E-45DA-8AEC-D3AFDA107BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{469F7AD1-801E-45DA-8AEC-D3AFDA107BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{469F7AD1-801E-45DA-8AEC-D3AFDA107BF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{60FF6657-DF5C-4704-AB32-0F6945A6A5F6} = {B0D82070-716C-43EA-9F38-44AB4C8463DC}
+		{3276CA18-1B23-4E9F-8231-E3505562C95E} = {A6BAE59E-D1C7-4763-84EB-A42E6224A72A}
+		{7E490AB9-2683-4DBC-8F80-A99B092BA7FA} = {A6BAE59E-D1C7-4763-84EB-A42E6224A72A}
+		{B0D82070-716C-43EA-9F38-44AB4C8463DC} = {A6BAE59E-D1C7-4763-84EB-A42E6224A72A}
+		{63044CF2-338E-40A2-849E-882758366B27} = {3276CA18-1B23-4E9F-8231-E3505562C95E}
+		{2829CC9C-3E88-4B4E-8BBA-CD38E4D450A5} = {7E490AB9-2683-4DBC-8F80-A99B092BA7FA}
+		{469F7AD1-801E-45DA-8AEC-D3AFDA107BF6} = {3276CA18-1B23-4E9F-8231-E3505562C95E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80D919EC-9D50-4C9C-8350-4EE21709A2D3}
+	EndGlobalSection
+EndGlobal
