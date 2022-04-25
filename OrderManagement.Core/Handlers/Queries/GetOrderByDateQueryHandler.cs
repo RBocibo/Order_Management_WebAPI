@@ -11,35 +11,35 @@ using System.Threading.Tasks;
 
 namespace OrderManagement.Core.Handlers.Queries
 {
-    //public class GetOrderByDateQuery : IRequest<OrderDTO>
-    //{
-    //    //public int ProductId { get; }
-    //    public DateTime Date { get; set; }
-    //    public GetOrderByDateQuery(DateTime date)
-    //    {
-    //        Date = date;
-    //    }
-    //}
-    //public class GetOrderByDateQueryHandler : IRequestHandler<GetOrderByNameQuery, OrderDTO>
-    //{
-    //    private readonly IUnitOfWork _repository;
-    //    private readonly IMapper _mapper;
+    public class GetOrderByDateQuery : IRequest<OrderDTO>
+    {
+        //public int ProductId { get; }
+        public DateTime Date { get; set; }
+        public GetOrderByDateQuery(DateTime date)
+        {
+            Date = date;
+        }
+    }
+    public class GetOrderByDateQueryHandler : IRequestHandler<GetOrderByDateQuery, OrderDTO>
+    {
+        private readonly IUnitOfWork _repository;
+        private readonly IMapper _mapper;
 
-    //    public GetOrderByDateQueryHandler(IUnitOfWork repository, IMapper mapper)
-    //    {
-    //        _repository = repository;
-    //        _mapper = mapper;
-    //    }
+        public GetOrderByDateQueryHandler(IUnitOfWork repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
 
-    //    public async Task<OrderDTO> Handle(GetOrderByNameQuery request, CancellationToken cancellationToken)
-    //    {
-    //        var order = await _repository.Order.GetAsync(a => a.CreatedDateUtc == request.Date);
-    //        if (order == null)
-    //        {
-    //            throw new EntityNotFoundException($"No date found with the name {request.Name }");
-    //        }
-    //        return _mapper.Map<OrderDTO>(order);
-    //    }
-    //}
+        public async Task<OrderDTO> Handle(GetOrderByDateQuery request, CancellationToken cancellationToken)
+        {
+            var order = await _repository.Order.GetAsync(a => a.CreatedDateUtc == request.Date);
+            if (order == null)
+            {
+                throw new EntityNotFoundException($"No date found with the name {request.Date }");
+            }
+            return _mapper.Map<OrderDTO>(order);
+        }
+    }
 }
 

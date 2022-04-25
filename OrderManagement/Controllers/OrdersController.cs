@@ -41,11 +41,36 @@ namespace OrderManagement.Controllers
         [Route("{name}")]
         [ProducesResponseType(typeof(OrderDTO), (int)HttpStatusCode.OK)]
         [ProducesErrorResponseType(typeof(BaseResponseDTO))]
-        public async Task<IActionResult> GetById(string name)
+        public async Task<IActionResult> GetByName(string name)
         {
             try
             {
                 var query = new GetOrderByNameQuery(name);
+                var response = await _mediator.Send(query);
+                return Ok(response);
+            }
+            catch (EntityNotFoundException ex)
+            {
+                return NotFound(new BaseResponseDTO
+                {
+                    IsSuccess = false,
+                    Error = new string[] { ex.Message }
+                });
+            }
+        }
+
+        /// <summary>
+        /// Retrieve an order using date
+        /// </summary>
+        [HttpGet]
+        [Route("{date}")]
+        [ProducesResponseType(typeof(OrderDTO), (int)HttpStatusCode.OK)]
+        [ProducesErrorResponseType(typeof(BaseResponseDTO))]
+        public async Task<IActionResult> GetByDate(DateTime date)
+        {
+            try
+            {
+                var query = new GetOrderByDateQuery(date);
                 var response = await _mediator.Send(query);
                 return Ok(response);
             }
