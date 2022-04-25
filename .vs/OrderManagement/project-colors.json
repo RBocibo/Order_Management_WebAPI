@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "60ff6657-df5c-4704-ab32-0f6945a6a5f6": {
+      "ProjectGuid": "60ff6657-df5c-4704-ab32-0f6945a6a5f6",
+      "DisplayName": "OrderManagement",
+      "ColorIndex": 0
+    },
+    "63044cf2-338e-40a2-849e-882758366b27": {
+      "ProjectGuid": "63044cf2-338e-40a2-849e-882758366b27",
+      "DisplayName": "OrderManagement.Contracts",
+      "ColorIndex": 1
+    },
+    "2829cc9c-3e88-4b4e-8bba-cd38e4d450a5": {
+      "ProjectGuid": "2829cc9c-3e88-4b4e-8bba-cd38e4d450a5",
+      "DisplayName": "OrderManagement.Infrastructure",
+      "ColorIndex": 2
+    },
+    "e8b50b82-285f-49ce-ad40-0b240903c5e9": {
+      "ProjectGuid": "e8b50b82-285f-49ce-ad40-0b240903c5e9",
+      "DisplayName": "OrderManagement.Migrations",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "469f7ad1-801e-45da-8aec-d3afda107bf6": {
+      "ProjectGuid": "469f7ad1-801e-45da-8aec-d3afda107bf6",
+      "DisplayName": "OrderManagement.Core",
+      "ColorIndex": 4
+    },
+    "5124ca42-7e1b-4bf1-9002-45edfc1d4993": {
+      "ProjectGuid": "5124ca42-7e1b-4bf1-9002-45edfc1d4993",
+      "DisplayName": "Domain",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}
