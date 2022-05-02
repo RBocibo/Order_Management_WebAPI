@@ -62,27 +62,27 @@ namespace OrderManagement.Controllers
         /// <summary>
         /// Retrieve an order using date
         /// </summary>
-        [HttpGet]
-        [Route("{date}")]
-        [ProducesResponseType(typeof(OrderDTO), (int)HttpStatusCode.OK)]
-        [ProducesErrorResponseType(typeof(BaseResponseDTO))]
-        public async Task<IActionResult> GetByDate(DateTime date)
-        {
-            try
-            {
-                var query = new GetOrderByDateQuery(date);
-                var response = await _mediator.Send(query);
-                return Ok(response);
-            }
-            catch (EntityNotFoundException ex)
-            {
-                return NotFound(new BaseResponseDTO
-                {
-                    IsSuccess = false,
-                    Error = new string[] { ex.Message }
-                });
-            }
-        }
+        //[HttpGet]
+        //[Route("{date}")]
+        //[ProducesResponseType(typeof(OrderDTO), (int)HttpStatusCode.OK)]
+        //[ProducesErrorResponseType(typeof(BaseResponseDTO))]
+        //public async Task<IActionResult> GetByDate(DateTime date)
+        //{
+        //    try
+        //    {
+        //        var query = new GetOrderByDateQuery(date);
+        //        var response = await _mediator.Send(query);
+        //        return Ok(response);
+        //    }
+        //    catch (EntityNotFoundException ex)
+        //    {
+        //        return NotFound(new BaseResponseDTO
+        //        {
+        //            IsSuccess = false,
+        //            Error = new string[] { ex.Message }
+        //        });
+        //    }
+        //}
 
         /// <summary>
         /// Place an order

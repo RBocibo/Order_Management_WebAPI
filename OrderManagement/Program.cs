@@ -8,6 +8,8 @@ using OrderManagement.Infrastructure.Repositories;
 using OrderManagement.Infrastructure.Repositories.Generic;
 using OrderManagement.Contracts.Entities;
 using System.Reflection;
+using OrderManagement.Contracts.Data.Cache;
+using OrderManagement.Infrastructure.Cache;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager config = builder.Configuration;
@@ -30,6 +32,9 @@ builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 builder.Services.AddTransient<IStockRepository, StockRepository>();
 builder.Services.AddCore();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddTransient(typeof(IDistributedCacheRepository), typeof(DistributedCacheRepository));
 
 
 builder.Services.AddControllers();

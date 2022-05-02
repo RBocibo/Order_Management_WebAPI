@@ -9,5 +9,8 @@ namespace OrderManagement.Contracts.Data.Repositories
 {
     public interface IOrderStateRepository : IRepository<OrderState>
     {
+        public Task<IEnumerable<OrderState>> GetCachedOrderStates();
+
+        public Task<OrderState> GetCachedOrderStatesByKey(int orderStateId);
     }
 }

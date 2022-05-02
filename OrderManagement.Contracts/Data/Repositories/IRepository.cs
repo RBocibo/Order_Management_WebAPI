@@ -14,7 +14,7 @@ namespace OrderManagement.Contracts.Data.Repositories
         Task<List<T>> ListAsync(Expression<Func<T, bool>> expression);
         Task<T> AddAsync(T entity);
         Task<T> UpdateAsync(T entity);
-        Task DeleteAsync(int id);
+        Task DeleteAsync(object id);
         Task<int> CountAsync();
 
     }

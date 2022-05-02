@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\services\OrderManagementAPI</_PublishTargetUrl>
+    <History>True|2022-04-29T15:07:04.3915497Z;False|2022-04-29T17:06:57.3138865+02:00;True|2022-04-29T17:05:37.0445445+02:00;True|2022-04-29T17:00:14.6361689+02:00;False|2022-04-29T16:59:41.0489940+02:00;True|2022-04-29T16:58:10.8330821+02:00;True|2022-04-29T16:43:40.7820657+02:00;True|2022-04-29T16:34:21.1521331+02:00;</History>
+  </PropertyGroup>
+</Project>

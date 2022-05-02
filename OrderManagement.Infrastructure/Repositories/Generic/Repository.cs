@@ -32,7 +32,7 @@ namespace OrderManagement.Infrastructure.Repositories.Generic
             return await _dbSet.CountAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(object id)
         {
             var entity = _dbSet.Find(id);
             if (entity != null)

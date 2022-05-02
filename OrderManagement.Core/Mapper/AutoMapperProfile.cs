@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using OrderManagement.Contracts.DTO.OrderDTOs;
+using OrderManagement.Contracts.DTO.OrderStatesDTO;
 using OrderManagement.Contracts.DTO.ProductD;
 using OrderManagement.Contracts.DTO.StockDTOs;
 using OrderManagement.Contracts.Entities;
@@ -18,6 +19,7 @@ namespace OrderManagement.Core.Mapper
             CreateMap<Product, ProductDTO>();
             CreateMap<Order, OrderDTO>();
             CreateMap<Stock, StockDTO>();
+            CreateMap<OrderState, OrderStateDTO>();
         }
     }
 }
