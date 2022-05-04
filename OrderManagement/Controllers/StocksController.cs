@@ -28,6 +28,7 @@ namespace OrderManagement.Controllers
         [ProducesErrorResponseType(typeof(BaseResponseDTO))]
         public async Task<IActionResult> GetById(int id)
         {
+            //Thread.Sleep(10000);
             try
             {
                 var query = new GetAvailableStockQuery(id);

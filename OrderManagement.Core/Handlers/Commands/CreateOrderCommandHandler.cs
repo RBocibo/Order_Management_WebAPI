@@ -39,7 +39,7 @@ namespace OrderManagement.Core.Handlers.Commands
             }
 
             var stock = await _repository.Stock.GetAsync(x => x.ProductId == model.ProductId);
-           
+           //put null check
             if (model.Quantity <= stock.AvailableStock)
             {
 
