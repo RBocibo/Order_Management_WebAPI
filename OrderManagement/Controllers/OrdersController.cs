@@ -6,12 +6,19 @@ using OrderManagement.Contracts.DTO.OrderDTOs;
 using OrderManagement.Core.Exceptions;
 using OrderManagement.Core.Handlers.Commands;
 using OrderManagement.Core.Handlers.Queries;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 
 namespace OrderManagement.Controllers
 {
-    [Route("api/[controller]")]
+    /// <summary>
+    /// Provides operations to manage orders
+    /// </summary>
     [ApiController]
+    [SwaggerTag("Provides operations to create orders")]
+    [Produces("application/json")]
+    [Route("api/[controller]")]
+    
     public class OrdersController : ControllerBase
     {
         private readonly IMediator _mediator;

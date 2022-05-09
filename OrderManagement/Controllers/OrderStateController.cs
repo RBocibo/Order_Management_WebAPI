@@ -5,12 +5,19 @@ using OrderManagement.Contracts.DTO;
 using OrderManagement.Contracts.DTO.OrderStatesDTO;
 using OrderManagement.Core.Exceptions;
 using OrderManagement.Core.Handlers.Queries;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 
 namespace OrderManagement.Controllers
 {
-    [Route("api/[controller]")]
+    /// <summary>
+    /// Provides operations to manage order states
+    /// </summary>
+    
     [ApiController]
+    [SwaggerTag("Provides operations to manage order states")]
+    [Produces("application/json")]
+    [Route("api/[controller]")]
     public class OrderStateController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -20,6 +27,10 @@ namespace OrderManagement.Controllers
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// Retrieves a set of order states
+        /// </summary>
+        /// <returns></returns> 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<OrderStateDTO>), (int)HttpStatusCode.OK)]
         [ProducesErrorResponseType(typeof(BaseResponseDTO))]
@@ -30,6 +41,10 @@ namespace OrderManagement.Controllers
             return Ok(response);
         }
 
+        /// <summary>
+        /// Retrieves the specified order state
+        /// </summary>
+        /// <returns></returns> 
         [HttpGet]
         [Route("{id}")]
         [ProducesResponseType(typeof(OrderStateDTO), (int)HttpStatusCode.OK)]

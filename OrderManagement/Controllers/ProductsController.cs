@@ -1,30 +1,46 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OrderManagement.Contracts.DTO;
 using OrderManagement.Contracts.DTO.ProductD;
 using OrderManagement.Contracts.DTO.ProductDTOs;
+using OrderManagement.Core.Authorization;
 using OrderManagement.Core.Exceptions;
 using OrderManagement.Core.Handlers.Commands;
 using OrderManagement.Core.Handlers.Queries;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 
 namespace OrderManagement.Controllers
 {
-    [Route("api/[controller]")]
+    /// <summary>
+    /// Provides operations to manage orders
+    /// </summary>
+
     [ApiController]
+    [SwaggerTag("Provides operations to manage products")]
+    [Produces("application/json")]
+    [Route("api/[controller]")]
+    [Authorize]
     public class ProductsController : ControllerBase
     {
         private readonly IMediator _mediator;
 
+        /// <summary>
+        /// Initialises the constructor
+        /// </summary>
+        /// <param name="_mediator"></param>
+        
         public ProductsController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
         /// <summary>
-        /// Retrieve the list of all products.
+        /// Retrieves a set of products
         /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<ProductDTO>), (int)HttpStatusCode.OK)]
         [ProducesErrorResponseType(typeof(BaseResponseDTO))]
@@ -36,8 +52,10 @@ namespace OrderManagement.Controllers
         }
 
         /// <summary>
-        /// Select/Search a specific product using name
+        /// Retrieves the specified product
         /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{name}")]
         [ProducesResponseType(typeof(ProductDTO), (int)HttpStatusCode.OK)]
@@ -61,11 +79,14 @@ namespace OrderManagement.Controllers
         }
 
         /// <summary>
-        /// Add a new product to the database
+        /// Creates a product
         /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(typeof(int), (int)HttpStatusCode.Created)]
         [ProducesErrorResponseType(typeof(BaseResponseDTO))]
+        [Authorize(Policy = Policy.AdminAuthorizePolicy)]
         public async Task<IActionResult> Post([FromBody] AddProductDTO model)
         {
             try
@@ -86,9 +107,12 @@ namespace OrderManagement.Controllers
         }
 
         /// <summary>
-        /// Deletes a specific product by ID.
+        /// Deletes a product
         /// </summary>
+        /// <param name="productId"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
+        [Authorize(Policy = Policy.AdminAuthorizePolicy)]
         public async Task<IActionResult> DeleteById(int id)
         {
             await _mediator.Send(new RemoveProductCommand { ProductId = id });

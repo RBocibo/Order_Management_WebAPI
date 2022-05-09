@@ -1,16 +1,25 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OrderManagement.Contracts.DTO;
 using OrderManagement.Contracts.DTO.StockDTOs;
 using OrderManagement.Core.Exceptions;
 using OrderManagement.Core.Handlers.Queries;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 
 namespace OrderManagement.Controllers
 {
-    [Route("api/[controller]")]
+    /// <summary>
+    /// Provides operations to manage orders
+    /// </summary>
+    
     [ApiController]
+    [SwaggerTag("Provides operations to manage products")]
+    [Produces("application/json")]
+    [Route("api/[controller]")]
+    [Authorize]
     public class StocksController : ControllerBase
     {
         private readonly IMediator _mediator;
